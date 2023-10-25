@@ -1,9 +1,8 @@
 [
   {
-    "userId":  "",
-    "platformId": "76561199111565094",
-    "platformUrl":"https://steamcommunity.com/profiles/76561199111565094/",
-    "addTime": 1698219900,
-    "reason": "烧家"
+    "netid": "76561199111565094",
+    "userid":  "",
+    "timestamp": 1698219900,
+    "description": "烧家"
   }
 ]
