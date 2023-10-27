@@ -1,4 +1,4 @@
-# 饥荒联机版-MOD-联合封禁
+# <div align="center">饥荒联机版-MOD-联合封禁</div>
 
 <p align="center">
   <img alt="release" src="https://img.shields.io/github/v/release/ylk2534246654/dst-mod-joint-ban" />
