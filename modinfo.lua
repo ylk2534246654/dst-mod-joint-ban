@@ -1,20 +1,44 @@
 local isEN = locale~="zh" and locale~="zhr"    --如果当前语言环境不是中文
-name = isEN and "Joint ban" or "联合封禁"
+name = (locale == "zh" and "联合封禁") or ((locale == "zhr" or locale == "zht") and "聯合封禁") or "Joint ban"
 author = "雨夏"
-version = "1.1"
-description = isEN and "[Version]\n    "..version..[[
-
-[Introduction to the Mod]
-    Automatically ban the Griefers that other people reported.
-	https://github.com/ylk2534246654/dst-mod-joint-ban/issues
-
-]] or "[当前版本]\n    "..version..[[
+version = "1.2"
+description = (locale == "zh" and "[版本]\n    "..version..[[
 
 [模组介绍]
-    自动封禁其他玩家提供的捣乱者信息。
+    所谓联合封禁，是指加了这个 mod 的服务器可以共同封禁一批捣乱者
+    随着以后黑名单的逐步完善，或许可以有效的创造一个良好的游戏环境
 
-	需要提供捣乱者信息可在讨论页面留言或前往
+    需要提供捣乱者信息可在评论区留言或推荐前往
+    https://github.com/ylk2534246654/dst-mod-joint-ban/issues
+
+    黑名单同步是在每次服务器重启后
+[黑名单列表]
+    https://github.com/ylk2534246654/dst-mod-joint-ban/blob/main/docs/blacklist.json
+
+]]) or ((locale == "zhr" or locale == "zht") and "[當前版本]\n    "..version..[[
+
+[模組介紹]
+	所謂聯合封禁，是指加了這個mod的服務器可以共同封禁一批搗亂者
+	隨著以後黑名單的逐步完善，或許可以有效的創造一個良好的遊戲環境
+
+	需要提供搗亂者資訊可在評論區留言或推薦前往
 	https://github.com/ylk2534246654/dst-mod-joint-ban/issues
+
+	黑名單同步是在每次服務器重啟後
+[黑名單清單]
+	https://github.com/ylk2534246654/dst-mod-joint-ban/blob/main/docs/blacklist.json
+
+]]) or "[Version]\n    "..version..[[
+
+[Mod introduction]
+	The joint ban mod allows servers that have installed it to collectively ban a group of troublemakers. With the gradual improvement of the blacklist, this mod may effectively create a better gaming environment.
+
+	To report troublemakers, please leave a message in the comments or visit
+	https://github.com/ylk2534246654/dst-mod-joint-ban/issues
+
+	The blacklist is synchronized after each server restart.
+[Blacklist]
+	https://github.com/ylk2534246654/dst-mod-joint-ban/blob/main/docs/blacklist.json
 
 ]]
 
@@ -31,7 +55,9 @@ icon_atlas = "modicon.xml"  --mod图标
 icon = "modicon.tex"
 
 server_filter_tags = {  --服务器标签
-    name,
+	"联合封禁",
+	"聯合封禁",
+	"Joint ban",
 }
 
 local function AddTitle(title)
@@ -45,6 +71,7 @@ local function AddTitle(title)
 end
 
 configuration_options = {
+	
 	-- {
 	-- 	name = "language",
     --     hover = isEN and "Choose your language" or "选择您使用的语言",

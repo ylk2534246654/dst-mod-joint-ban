@@ -11,43 +11,62 @@ local urls = {
 }
 
 --添加黑名单
-local function ban(blacklist, netid, userid, timestamp, description)
-    local removeBlacklist = {}
+local function ban(blacklist, netid, userid, timestamp)
+    local netidBlacklist = {}
+    local userBlacklist = {}
+    local netid_len = string.len(netid)
+    local userid_len = string.len(userid)
     for i, o1 in pairs(blacklist) do
-        if netid ~= nil and string.len(netid) > 0 and o1.netid == netid then
-            table.insert(removeBlacklist, i)
-        elseif userid ~= nil and string.len(userid) > 0 and o1.userid == userid then
-            table.insert(removeBlacklist, i)
+        if o1.netid == netid and o1.userid == userid then
+            --print("黑名单已存在 netid:"..netid..",userid:"..userid)
+            return
+        end
+        if netid ~= nil and netid_len > 0 and o1.netid == netid then
+            table.insert(netidBlacklist, i)
+        end
+        if userid ~= nil and userid_len > 0 and o1.userid == userid then
+            table.insert(userBlacklist, i)
         end
     end
 
-    for i = #removeBlacklist, 1, -1 do
-        table.remove(blacklist, removeBlacklist[i])
-    end
-
-    if description == nil then
-        description = ""
-    end
     if netid == nil then
         netid = ""
     end
-    if userid == nil or string.len(userid) == 0 then
-        userid = "KU_JointBan"
+    if userid == nil then
+        userid = ""
     end
     if timestamp == nil then
         timestamp = ""
     end
 
-    table.insert(blacklist, {
-        servername = "joint-ban",
-        character = "",
-        date = "",
-        serverdescription = tostring(description),
-        netid = tostring(netid),
-        userid = tostring(userid),
-        timestamp = tostring(timestamp),
-        netprofilename = ""
-    })
+    if #netidBlacklist == 0 and #userBlacklist == 0 then
+        if userid_len == 0 then
+            userid = "KU_JointBan"
+        end
+
+        --print("添加黑名单 netid:"..netid..",userid:"..userid)
+        
+        table.insert(blacklist, {
+            servername = "joint-ban",
+            character = "",
+            date = "",
+            serverdescription = "mod",
+            netid = tostring(netid),
+            userid = tostring(userid),
+            timestamp = tostring(timestamp),
+            netprofilename = ""
+        })
+    else
+        --print("已存在黑名单，补充黑名单信息 netid:"..netid..",userid:"..userid)
+        for i = #netidBlacklist, 1, -1 do
+            blacklist[i].netid = tostring(netid)
+            blacklist[i].userid = tostring(userid)
+        end
+        for i = #userBlacklist, 1, -1 do
+            blacklist[i].netid = tostring(netid)
+            blacklist[i].userid = tostring(userid)
+        end
+    end
     --print("更新黑名单 -> "..GLOBAL.json.encode(blacklist))
 end
 
@@ -64,7 +83,7 @@ local function clear(blacklist)
         table.remove(blacklist, clearBlacklist[i])
     end
     
-    --print("更新黑名单 -> "..GLOBAL.json.encode(blacklist))
+    --print("恢复白名单 -> "..GLOBAL.json.encode(blacklist))
 end
 
 --修复黑名单
@@ -75,7 +94,7 @@ local function repair(blacklist)
             o1.netid = "" --清空netid
         end
     end
-    --print("更新黑名单 -> "..GLOBAL.json.encode(blacklist))
+    --print("修复黑名单 -> "..GLOBAL.json.encode(blacklist))
 end
 
 local function requestUrl(urls, index)
@@ -95,7 +114,7 @@ local function requestUrl(urls, index)
                 clear(sy_blacklist) --清理旧黑名单
                 for i, o in pairs(blacklist) do
                     if (o.netid ~= nil and string.len(o.netid) > 0) or (o.userid ~= nil and string.len(o.userid) > 0) then
-                        ban(sy_blacklist, o.netid, o.userid, o.timestamp, o.description)
+                        ban(sy_blacklist, o.netid, o.userid, o.timestamp)
                     end
                 end
                 repair(sy_blacklist)
