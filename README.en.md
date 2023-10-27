@@ -1,5 +1,12 @@
 # dst-mod-joint-ban
 
+<p align="center">
+  <img alt="release" src="https://img.shields.io/github/v/release/ylk2534246654/dst-mod-joint-ban" />
+  <img alt="license" src="https://img.shields.io/github/license/ylk2534246654/dst-mod-joint-ban" />
+  <img alt="downloads" src="https://img.shields.io/github/downloads/ylk2534246654/dst-mod-joint-ban/total" />
+  <img alt="issues" src="https://img.shields.io/github/issues/ylk2534246654/dst-mod-joint-ban" />
+</p>
+
 ### Mod introduction
 
 The joint ban mod allows servers that have installed it to collectively ban a group of troublemakers. 
