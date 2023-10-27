@@ -1,5 +1,4 @@
 # dst-mod-joint-ban
-简体中文 | [English](https://github.com/ylk2534246654/dst-mod-joint-ban/blob/main/README_en.md)
 
 ### Mod introduction
 
@@ -8,7 +7,8 @@ The joint ban mod allows servers that have installed it to collectively ban a gr
 With the gradual improvement of the blacklist, this mod may effectively create a better gaming environment.
 
 
-To report troublemakers, please leave a message in the comments or visit
+To report troublemakers, please leave a message in the comments or visit:
+
 https://github.com/ylk2534246654/dst-mod-joint-ban/issues
 
 - Please provide the following information:
