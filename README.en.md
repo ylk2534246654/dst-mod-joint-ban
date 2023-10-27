@@ -1,4 +1,4 @@
-# dst-mod-joint-ban
+# <div align="center">dst-mod-joint-ban</div>
 
 <p align="center">
   <img alt="release" src="https://img.shields.io/github/v/release/ylk2534246654/dst-mod-joint-ban" />
