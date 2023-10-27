@@ -1,4 +1,12 @@
 # 饥荒联机版-MOD-联合封禁
+
+<p align="center">
+  <img alt="release" src="https://img.shields.io/github/v/release/ylk2534246654/dst-mod-joint-ban" />
+  <img alt="license" src="https://img.shields.io/github/license/ylk2534246654/dst-mod-joint-ban" />
+  <img alt="downloads" src="https://img.shields.io/github/downloads/ylk2534246654/dst-mod-joint-ban/total" />
+  <img alt="issues" src="https://img.shields.io/github/issues/ylk2534246654/dst-mod-joint-ban" />
+</p>
+
 简体中文 | [English](https://github.com/ylk2534246654/dst-mod-joint-ban/blob/main/README.en.md)
 
 ### 模组介绍
