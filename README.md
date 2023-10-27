@@ -42,3 +42,9 @@ id 必须填一个，为更好的封禁建议两个都提供一下
 ### 黑名单列表
 
 https://github.com/ylk2534246654/dst-mod-joint-ban/blob/main/docs/blacklist.json
+
+### 模组订阅
+- steam
+https://steamcommunity.com/sharedfiles/filedetails/?id=3061506079
+- WeGame
+https://www.wegame.com.cn/pc_game/assistant.html#/2000004/newMod/2199027653598543694
