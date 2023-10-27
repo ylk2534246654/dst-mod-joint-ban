@@ -1,4 +1,4 @@
-# 饥荒-MOD-联合封禁
+# 饥荒联机版-MOD-联合封禁
 简体中文 | [English](https://github.com/ylk2534246654/dst-mod-joint-ban/blob/main/README.en.md)
 
 ### 模组介绍
