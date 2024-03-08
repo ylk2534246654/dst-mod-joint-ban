@@ -1,8 +1,8 @@
 local isEN = locale~="zh" and locale~="zhr"    --如果当前语言环境不是中文
-name = (locale == "zh" and "联合封禁") or ((locale == "zhr" or locale == "zht") and "聯合封禁") or "Joint ban"
+name = ((locale == "zh" or locale == "zhr") and "联合封禁") or (locale == "zht" and "聯合封禁") or "Joint ban"
 author = "雨夏"
 version = "1.2"
-description = (locale == "zh" and "[版本]\n    "..version..[[
+description = ((locale == "zh" or locale == "zhr") and "[当前版本]\n    "..version..[[
 
 [模组介绍]
     所谓联合封禁，是指加了这个 mod 的服务器可以共同封禁一批捣乱者
@@ -15,10 +15,10 @@ description = (locale == "zh" and "[版本]\n    "..version..[[
 [黑名单列表]
     https://github.com/ylk2534246654/dst-mod-joint-ban/blob/main/docs/blacklist.json
 
-]]) or ((locale == "zhr" or locale == "zht") and "[當前版本]\n    "..version..[[
+]]) or (locale == "zht" and "[當前版本]\n    "..version..[[
 
 [模組介紹]
-	所謂聯合封禁，是指加了這個mod的服務器可以共同封禁一批搗亂者
+	所謂聯合封禁，是指加了這個 mod 的服務器可以共同封禁一批搗亂者
 	隨著以後黑名單的逐步完善，或許可以有效的創造一個良好的遊戲環境
 
 	需要提供搗亂者資訊可在評論區留言或推薦前往
@@ -71,7 +71,6 @@ local function AddTitle(title)
 end
 
 configuration_options = {
-	
 	-- {
 	-- 	name = "language",
     --     hover = isEN and "Choose your language" or "选择您使用的语言",
