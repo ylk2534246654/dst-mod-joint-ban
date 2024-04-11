@@ -6,8 +6,7 @@ end
 local urls = {
     "https://github.com/ylk2534246654/dst-mod-joint-ban/raw/main/docs/blacklist.json",
     "https://gitlab.com/ylk2534246654/dst-mod-joint-ban/-/raw/main/docs/blacklist.json",
-    "https://gitcode.net/Cynric_Yx/dst-mod-joint-ban/-/raw/main/docs/blacklist.json",
-    "https://jihulab.com/ylk2534246654/dst-mod-joint-ban/-/raw/main/docs/blacklist.json"
+    "https://gitcode.net/Cynric_Yx/dst-mod-joint-ban/-/raw/main/docs/blacklist.json"
 }
 
 --添加黑名单
